@@ -1,0 +1,205 @@
+/* For the homepage */
+body {
+    background-image: url('/static/pics/homepage_background.jpg');
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gradient text style */
+h1 {
+    font-size: 3em;
+    background: linear-gradient(90deg, #ff69b4, #1e90ff, #000080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+/* For language learning */
+.language-background {
+    background-image: url('/static/pics/language_background.jpg');
+}
+
+/* For mathematics learning */
+.math-background {
+    background-image: url('/static/pics/mathematics_background.jpg');
+}
+
+/* General container style */
+.container {
+    margin: 50px auto;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the quiz container specifically */
+.quiz-container {
+    max-width: 400px;  /* Adjust max width for better sizing */
+    margin: auto;      /* Center the quiz container */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for number input fields */
+input[type="number"] {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 192, 203, 0.3);
+    color: #0b0342;
+    backdrop-filter: blur(5px);
+}
+
+/* Styling for the operation dropdown */
+select {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Adding specific colors to options in the dropdown */
+select option {
+    color: #333;
+}
+
+select option[value="add"] {
+    color: #ff69b4;
+}
+
+select option[value="subtract"] {
+    color: #ff4500;
+}
+
+select option[value="multiply"] {
+    color: #32cd32;
+}
+
+select option[value="divide"] {
+    color: #1e90ff;
+}
+
+/* Button styling */
+button {
+    background-color: #ff69b4;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1e90ff;
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+/* Card Layout for Vowels and Alphabet */
+.vowel-cards, .alphabet-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Start Quiz Button */
+.start-quiz-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.start-quiz-btn:hover {
+    background-color: #1e90ff;
+}
+
+/* Quiz Options Layout */
+.quiz-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.quiz-option {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: #1e90ff;
+}
+
+/* Feedback Styling */
+.feedback {
+    font-size: 1.1em;
+    color: #4caf50;
+    margin-top: 10px;
+}
+
+/* Specific styles for the Math Quiz feedback and layout */
+.quiz-container h2, .quiz-container h3 {
+    font-size: 1.5em;  /* Adjust header size */
+}
+
+.quiz-container p {
+    font-size: 1.1em;  /* Adjust feedback text size */
+}
+
+/* General adjustments for child-friendly appeal */
+h2, h3 {
+    color: #ff69b4; /* Bright color for headers */
+}
+
+p {
+    font-size: 1.1em; /* Ensures text is legible */
+    line-height: 1.5; /* Improves readability */
+}
+
+.container, .quiz-container {
+    animation: fadeIn 0.5s; /* Adds a fade-in effect */
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
