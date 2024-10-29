@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="language-background">
+    <div class="container">
+        <h1>Language Quiz</h1>
+        
+        <!-- Display Question -->
+        <h2>{{ question }}</h2>
+
+        <!-- Form for User's Answer -->
+        <form method="POST" action="{{ url_for('language_quiz') }}">
+
+            <!-- Choices Section -->
+            <div class="quiz-options">
+                {% for option in options %}
+                    <button type="submit" name="answer" value="{{ option }}" class="quiz-option">
+                        {{ option }}
+                    </button>
+                {% endfor %}
+            </div>
+        </form>
+
+        <!-- Feedback Section -->
+        {% if feedback %}
+            <p class="feedback">{{ feedback }}</p>
+        {% endif %}
+
+        <!-- Progress Tracking -->
+        <p>Questions Answered: {{ questions_answered }} / 15</p>
+    </div>
+</body>
+</html>
