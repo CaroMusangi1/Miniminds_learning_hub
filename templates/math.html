@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="math-background">
+    <div class="container">
+        <h1>Math Calculator</h1>
+        <form action="{{ url_for('calculate') }}" method="POST">
+            <input type="number" name="num1" required placeholder="First Number">
+            <input type="number" name="num2" required placeholder="Second Number">
+            <select name="operation" required>
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+        
+        {% if result is not none %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+
+        <a href="{{ url_for('math_quiz') }}">Go to Math Quiz</a>
+        <br>
+        <a href="{{ url_for('reset_progress') }}">Reset Progress</a>
+    </div>
+</body>
+</html>
