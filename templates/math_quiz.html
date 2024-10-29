@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Math Quiz</h1>
+        <h2>Question {{ questions_answered + 1 }} of {{ total_questions }}</h2>
+        <h3>{{ question }}</h3>
+
+        <form method="POST">
+            <input type="number" name="answer" required placeholder="Your Answer" autocomplete="off" >          
+            <button type="submit">Submit Answer</button>
+        </form>
+
+        {% if feedback %}
+            <p>{{ feedback }}</p>
+        {% endif %}
+
+        <a href="/reset-progress">Retake Quiz</a>
+        <a href="{{ url_for('math') }}">Go to Math Calculator</a>
+    </div>
+</body>
+</html>

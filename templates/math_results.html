@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Centering text and increasing font size */
+        body {
+            text-align: center;  /* Center text */
+            background: linear-gradient(to right, #ffccff, #6699ff); /* Soft pink to soft blue gradient */
+            color: black; /* Set font color to black */
+            height: 100vh; /* Make body full height */
+            margin: 0; /* Remove default margin */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* White background for the container with some transparency */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Spacing inside the container */
+            margin: 50px auto; /* Center the container with margin */
+            max-width: 600px; /* Set a maximum width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+        }
+
+        h1 {
+            font-size: 3.5rem;  /* Increase font size for the main title */
+        }
+
+        h2 {
+            font-size: 2.5rem;  /* Increase font size for the subtitle */
+        }
+
+        p {
+            font-size: 1.5rem;  /* Increase font size for paragraphs */
+        }
+
+        .feedback {
+            font-size: 1.5rem;  /* Ensure feedback text is larger */
+        }
+
+        .start-quiz-btn {
+            display: inline-block; /* Align the button properly */
+            padding: 10px 20px; /* Button padding */
+            background-color: #4CAF50; /* Green background for the button */
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded button corners */
+            font-size: 1.2rem; /* Button font size */
+        }
+
+        .start-quiz-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body class="math-background">
+    <div class="container">
+        <h1>Math Quiz Results</h1>
+        <h2>Congratulations!</h2>
+        <p>You answered <strong>{{ correct_answers }}</strong> out of <strong>{{ total }}</strong> questions correctly!</p>
+        <p class="feedback">
+            {% if correct_answers == total %}
+                Amazing job! You got all the answers right!
+            {% elif correct_answers >= total / 2 %}
+                Great work! You did well!
+            {% else %}
+                Don't worry! Keep practicing and you'll improve!
+            {% endif %}
+        </p>
+        <a class="start-quiz-btn" href="{{ url_for('reset_progress') }}">Start Over</a>
+    </div>
+</body>
+</html>
+
