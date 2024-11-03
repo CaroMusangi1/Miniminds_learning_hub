@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Miniminds Learning Hub</title>
+    <title>Miniminds Learning Hub</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="homepage-background"> <!-- Added class for homepage background -->
     <div class="container">
-        <h1>Welcome to the MiniMinds  Learning Hub</h1>
+        <h1>Welcome to the MiniMinds Learning Hub</h1>
         <p>Choose a subject to begin learning:</p>
         <ul>
             <li><a href="/math">Math Learning</a></li>
             <li><a href="/language">Language Learning</a></li>
         </ul>
+        <form action="{{ url_for('reset_progress') }}" method="get"> <!-- Form for reset -->
+            <button type="submit" class="reset-button">Reset Progress</button> <!-- Reset button -->
+        </form>
     </div>
 </body>
 </html>
