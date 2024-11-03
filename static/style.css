@@ -128,18 +128,34 @@ button:hover {
 
 /* Start Quiz Button */
 .start-quiz-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    display: inline-block; /* Make it an inline block to behave like a button */
+    margin-top: 20px; /* Spacing above the buttons */
+    margin-bottom: 15px; /* Space below each button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #ff69b4; /* Button background color */
+    color: #fff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 1.2em; /* Font size */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    text-align: center; /* Center text in the button */
+}
+
+.start-quiz-btn:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last button if necessary */
 }
 
 .start-quiz-btn:hover {
-    background-color: #1e90ff;
+    background-color: #1e90ff; /* Change color on hover */
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Additional space above the button container */
 }
 
 /* Quiz Options Layout */
@@ -203,3 +219,4 @@ p {
         opacity: 1;
     }
 }
+
