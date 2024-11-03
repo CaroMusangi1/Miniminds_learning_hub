@@ -180,9 +180,11 @@ def reset_progress():
 
 @app.route('/reset-language-progress')
 def reset_language_progress():
+    # Clear specific session variables related to language quiz progress
     session.pop('language_questions_answered', None)
     session.pop('language_correct_answers', None)
-    return redirect(url_for('language_quiz'))
+    session.pop('asked_language_questions', None)  # Optionally clear this if needed
+    return redirect(url_for('language_quiz'))  # Redirect back to the quiz 
 
 if __name__ == '__main__':
     app.run(debug=True)
