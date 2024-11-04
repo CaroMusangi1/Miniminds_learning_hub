@@ -9,11 +9,11 @@
 <body>
     <div class="quiz-container">
         <h1>Math Quiz</h1>
-        <h2>Question {{ questions_answered + 1 }} of {{ total_questions }}</h2>
+        <h2>Question {{ questions_answered + 1 }} of {{ 15 }}</h2>
         <h3>{{ question }}</h3>
 
         <form method="POST">
-            <input type="number" name="answer" required placeholder="Your Answer" autocomplete="off" >          
+            <input type="number" name="answer" required placeholder="Your Answer" autocomplete="off">          
             <button type="submit">Submit Answer</button>
         </form>
 
@@ -21,8 +21,10 @@
             <p>{{ feedback }}</p>
         {% endif %}
 
-        <a href="/reset-progress">Retake Quiz</a>
-        <a href="{{ url_for('math') }}">Go to Math Calculator</a>
+        <div class="button-container">
+            <a class="button" href="{{ url_for('reset_progress') }}">Retake Quiz</a> 
+            <a class="button" href="{{ url_for('math') }}">Go to Math Calculator</a>
+        </div>
     </div>
 </body>
 </html>
