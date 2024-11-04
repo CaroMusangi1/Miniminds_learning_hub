@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Results</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Language Quiz Results</title>
     <style>
         /* Centering text and increasing font size */
         body {
@@ -28,16 +27,8 @@
             font-size: 3.5rem;  /* Increase font size for the main title */
         }
 
-        h2 {
-            font-size: 2.5rem;  /* Increase font size for the subtitle */
-        }
-
         p {
             font-size: 1.5rem;  /* Increase font size for paragraphs */
-        }
-
-        .feedback {
-            font-size: 1.5rem;  /* Ensure feedback text is larger */
         }
 
         .start-quiz-btn {
@@ -55,22 +46,12 @@
         }
     </style>
 </head>
-<body class="math-background">
+<body>
     <div class="container">
-        <h1>Math Quiz Results</h1>
-        <h2>Congratulations!</h2>
-        <p>You answered <strong>{{ correct_answers }}</strong> out of <strong>{{ total }}</strong> questions correctly!</p>
-        <p class="feedback">
-            {% if correct_answers == total %}
-                Amazing job! You got all the answers right!
-            {% elif correct_answers >= total / 2 %}
-                Great work! You did well!
-            {% else %}
-                Don't worry! Keep practicing and you'll improve!
-            {% endif %}
-        </p>
-        <a class="start-quiz-btn" href="{{ url_for('reset_progress') }}">Start Over</a>
+        <h1>Language Quiz Results</h1>
+        <p>You answered {{ correct_answers }} out of {{ total }} questions correctly!</p>
+        <a href="{{ url_for('home') }}" class="start-quiz-btn">Return Home</a>
+        <a href="{{ url_for('reset_language_progress') }}" class="start-quiz-btn">Retake Quiz</a>
     </div>
 </body>
 </html>
-
