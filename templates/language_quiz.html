@@ -9,12 +9,14 @@
 <body class="language-background">
     <div class="container">
         <h1>Language Quiz</h1>
-        
+       
         <!-- Display Question -->
         <h2>{{ question }}</h2>
 
+
         <!-- Form for User's Answer -->
         <form method="POST" action="{{ url_for('language_quiz') }}">
+
 
             <!-- Choices Section -->
             <div class="quiz-options">
@@ -26,10 +28,12 @@
             </div>
         </form>
 
+
         <!-- Feedback Section -->
         {% if feedback %}
             <p class="feedback">{{ feedback }}</p>
         {% endif %}
+
 
         <!-- Progress Tracking -->
         <p>Questions Answered: {{ questions_answered }} / 15</p>
